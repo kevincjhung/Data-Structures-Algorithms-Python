@@ -19,4 +19,3 @@ function selectionSort(arr){
 }
 
 
-

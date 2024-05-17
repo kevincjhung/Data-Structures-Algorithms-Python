@@ -1,6 +1,6 @@
 testArray = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 1, 2, 3, 4, 5, 6, 7]
 
-def selection_sort(A, i=None):
+def recursives_selection_sort(A, i=None):
     # If 'i' is not provided, set it to the last index of the array A
     if i is None:
         i = len(A) - 1
@@ -28,6 +28,20 @@ def prefix_max(A, i):
 
 
 
-print(testArray)
+
+def selection_sort(A):
+    n = len(A)
+
+    # find the smallest element
+    for i in range(n-1): # Assume min is first element
+        min_index = i
+
+        for j in range(i + 1, n):
+            if A[j] < A[min_index]:
+                min_index = j
+        
+        if min_index != i:
+            A[i], A[min_index] = A[min_index], A[i] 
+
 selection_sort(testArray)
 print(testArray)
