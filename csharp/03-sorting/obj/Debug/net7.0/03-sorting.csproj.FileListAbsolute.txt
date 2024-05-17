@@ -1,0 +1,15 @@
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/03-sorting.csproj.AssemblyReference.cache
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/03-sorting.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/03-sorting.AssemblyInfoInputs.cache
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/03-sorting.AssemblyInfo.cs
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/03-sorting.csproj.CoreCompileInputs.cache
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/bin/Debug/net7.0/03-sorting
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/bin/Debug/net7.0/03-sorting.deps.json
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/bin/Debug/net7.0/03-sorting.runtimeconfig.json
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/bin/Debug/net7.0/03-sorting.dll
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/bin/Debug/net7.0/03-sorting.pdb
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/03-sorting.dll
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/refint/03-sorting.dll
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/03-sorting.pdb
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/03-sorting.genruntimeconfig.cache
+/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/Debug/net7.0/ref/03-sorting.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/csharp.csproj": {}
+    "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/03-sorting.csproj": {}
   },
   "projects": {
-    "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/csharp.csproj": {
+    "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/03-sorting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/csharp.csproj",
-        "projectName": "csharp",
-        "projectPath": "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/csharp.csproj",
+        "projectUniqueName": "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/03-sorting.csproj",
+        "projectName": "03-sorting",
+        "projectPath": "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/03-sorting.csproj",
         "packagesPath": "/Users/kevincjhung/.nuget/packages/",
-        "outputPath": "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/obj/",
+        "outputPath": "/Users/kevincjhung/Documents/GitHub/Data-Structures-Algorithms/csharp/03-sorting/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kevincjhung/.nuget/NuGet/NuGet.Config"
