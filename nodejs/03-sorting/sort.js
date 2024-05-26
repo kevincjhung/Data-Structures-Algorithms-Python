@@ -1,5 +1,17 @@
 let testArray = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 1, 2, 3, 4, 5, 6, 7]
 
+
+function generateLargeArrayOfNumbers() {
+  let resultsArray = []
+
+  for(let i = 0; i < 1000000; i++){
+    resultsArray.push(parseInt(Math.random() * 10000000))
+  }
+  return resultsArray;
+}
+
+
+
 function selectionSort(arr){
   for(let i = 0; i < arr.length - 1; i++){
     let min_index = i; // index of the smallest element
@@ -39,5 +51,39 @@ function insertionSort(arr){
 }
 
 
-const sortedArray = insertionSort(testArray);
-console.log("Sorted Array:", sortedArray);
+function mergeSort(array){
+  // base case, if array has 1 or 0 item, it is already sorted
+  if (array.length <= 1){
+    return array
+  }
+
+  let middleIndex = Math.floor(array.length/2)
+  let leftArray = array.slice(0, middleIndex)
+  let rightArray = array.slice(middleIndex)
+
+  return merge(mergeSort(leftArray), mergeSort(rightArray))
+}
+
+
+
+function merge(arr1, arr2) {
+  let resultArray = [];
+  
+  while (arr1.length !== 0 && arr2.length !== 0) {
+    if (arr1[0] <= arr2[0]) {
+      resultArray.push(arr1.shift());
+    } else {
+      resultArray.push(arr2.shift());
+    }
+  }
+
+  // Concatenate remaining elements (one of the arrays might be empty)
+  resultArray = resultArray.concat(arr1).concat(arr2);
+  return resultArray;
+}
+
+
+
+
+
+

@@ -14,6 +14,7 @@ def recursives_selection_sort(A, i=None):
         # Recursively call selection_sort on the subarray A[0:i-1]
         selection_sort(A, i - 1)
 
+# Helper function for recursive_selection_sort
 def prefix_max(A, i):
     # Base case: If i is greater than 0, find the maximum element in A[0:i]
     if i > 0:
@@ -25,8 +26,6 @@ def prefix_max(A, i):
             return j
     # If A[i] is greater or equal, or if i == 0, return i
     return i
-
-
 
 
 def selection_sort(A):
@@ -43,5 +42,41 @@ def selection_sort(A):
         if min_index != i:
             A[i], A[min_index] = A[min_index], A[i] 
 
-selection_sort(testArray)
-print(testArray)
+
+
+def insertion_sort():
+    return
+
+# Helper function for merge sort
+def merge(arr1, arr2):
+    result_array = []
+
+    while arr1 and arr2:
+        if arr1[0] <= arr2[0]:
+            result_array.append(arr1.pop(0))  # Use pop(0) to remove the first element
+        else: 
+            result_array.append(arr2.pop(0))  # Use pop(0) to remove the first element
+    
+    # Extend the result_array with the remaining elements of arr1 and arr2
+    result_array.extend(arr1)
+    result_array.extend(arr2)
+
+    return result_array
+
+
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    middle_index = len(arr) // 2
+
+    # Recursively call merge_sort on the left and right halves of the array
+    left_half = merge_sort(arr[:middle_index])
+    right_half = merge_sort(arr[middle_index:])
+
+    # Merge the sorted left and right halves
+    return merge(left_half, right_half)
+
+
+
+print(merge_sort(testArray))
