@@ -11,7 +11,6 @@ function generateLargeArrayOfNumbers() {
 }
 
 
-
 function selectionSort(arr){
   for(let i = 0; i < arr.length - 1; i++){
     let min_index = i; // index of the smallest element
@@ -29,7 +28,6 @@ function selectionSort(arr){
 
   return arr
 }
-
 
 
 function insertionSort(arr){
@@ -51,21 +49,6 @@ function insertionSort(arr){
 }
 
 
-function mergeSort(array){
-  // base case, if array has 1 or 0 item, it is already sorted
-  if (array.length <= 1){
-    return array
-  }
-
-  let middleIndex = Math.floor(array.length/2)
-  let leftArray = array.slice(0, middleIndex)
-  let rightArray = array.slice(middleIndex)
-
-  return merge(mergeSort(leftArray), mergeSort(rightArray))
-}
-
-
-
 function merge(arr1, arr2) {
   let resultArray = [];
   
@@ -81,6 +64,24 @@ function merge(arr1, arr2) {
   resultArray = resultArray.concat(arr1).concat(arr2);
   return resultArray;
 }
+
+
+function mergeSort(array){
+  // base case, if array has 1 or 0 item, it is already sorted
+  if (array.length <= 1){
+    return array
+  }
+
+  let middleIndex = Math.floor(array.length/2)
+  let leftArray = array.slice(0, middleIndex)
+  let rightArray = array.slice(middleIndex)
+
+  return merge(mergeSort(leftArray), mergeSort(rightArray))
+}
+
+
+
+
 
 
 

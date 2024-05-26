@@ -42,10 +42,32 @@ def selection_sort(A):
         if min_index != i:
             A[i], A[min_index] = A[min_index], A[i] 
 
+"""
+    Sorts a list in ascending order using the insertion sort algorithm.
 
+    Parameters:
+    arr (list): The list to be sorted.
 
-def insertion_sort():
-    return
+    Returns:
+    list: The sorted list.
+"""
+def insertion_sort(arr):
+    # Iterate over the list starting from the second element
+    for i in range(1, len(arr)):
+        key = arr[i]  # Current element to be inserted
+        j = i - 1     # Index of the previous element
+
+        # Move elements of arr[0..i-1], that are greater than key,
+        # to one position ahead of their current position
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        # Insert the key into its correct position
+        arr[j + 1] = key
+
+    return arr
+
 
 # Helper function for merge sort
 def merge(arr1, arr2):
