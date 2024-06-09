@@ -101,4 +101,34 @@ def merge_sort(arr):
 
 
 
-print(merge_sort(testArray))
+def quick_sort(array, low_index=0, high_index=None):
+    if high_index is None:
+        high_index = len(array) - 1
+    if low_index < high_index:
+        # Partition the array and get the pivot index
+        pivot_index = partition(array, low_index, high_index)
+
+        # Recursively sort elements before and after partition
+        quick_sort(array, low_index, pivot_index - 1)
+        quick_sort(array, pivot_index + 1, high_index)
+    return array
+
+
+def partition(array, low_index, high_index):
+    # Choose the pivot as the last element of the array segment
+    pivot = array[high_index]
+    i = low_index - 1  # Index of smaller element
+
+    for j in range(low_index, high_index):
+        # If the current element is smaller than or equal to the pivot
+        if array[j] <= pivot:
+            i += 1
+            # Swap array[i] and array[j]
+            array[i], array[j] = array[j], array[i]
+
+    # Swap array[i + 1] and array[high_index] (or pivot)
+    array[i + 1], array[high_index] = array[high_index], array[i + 1]
+    return i + 1
+
+
+print(quick_sort(testArray))
