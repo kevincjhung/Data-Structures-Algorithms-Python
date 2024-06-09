@@ -87,6 +87,10 @@ function mergeSort(array){
 
 /**
  * Sorts an array using the QuickSort algorithm.
+ * It picks a "pivot" element and partitions
+ * the array into two sub-arrays: elements smaller than the pivot and elements
+ * larger than the pivot. It then recursively sorts these sub-arrays until the
+ * entire array is sorted.
  * 
  * @param {Array} array - The array to be sorted.
  * @param {number} lowIndex - The starting index of the array segment to be sorted.
@@ -107,6 +111,7 @@ function quickSort(array, lowIndex = 0, highIndex = array.length - 1) {
 
 
 /**
+* Helper function for quickSort()
 * Partitions the array segment and returns the index of the pivot.
 * 
 * @param {Array} array - The array to be partitioned.
@@ -132,6 +137,4 @@ function partition(array, lowIndex, highIndex) {
   return i + 1;
 }
 
-// Call quickSort and store the sorted array in variable b
-let b = quickSort([20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 1, 2, 3, 4, 5, 6, 7]);
-console.log(b); // Output the sorted array
+

@@ -131,4 +131,3 @@ def partition(array, low_index, high_index):
     return i + 1
 
 
-print(quick_sort(testArray))
