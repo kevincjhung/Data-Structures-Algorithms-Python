@@ -1,4 +1,4 @@
-let testArray = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 1, 2, 3, 4, 5, 6, 7]
+
 
 
 function generateLargeArrayOfNumbers() {
@@ -65,7 +65,12 @@ function merge(arr1, arr2) {
   return resultArray;
 }
 
-
+/**
+ * Sorts an array using mergesort
+ * 
+ * @param {*} array 
+ * @returns 
+ */
 function mergeSort(array){
   // base case, if array has 1 or 0 item, it is already sorted
   if (array.length <= 1){
@@ -80,11 +85,53 @@ function mergeSort(array){
 }
 
 
+/**
+ * Sorts an array using the QuickSort algorithm.
+ * 
+ * @param {Array} array - The array to be sorted.
+ * @param {number} lowIndex - The starting index of the array segment to be sorted.
+ * @param {number} highIndex - The ending index of the array segment to be sorted.
+ * @returns {Array} The sorted array.
+ */
+function quickSort(array, lowIndex = 0, highIndex = array.length - 1) {
+  if (lowIndex < highIndex) {
+      // Partition the array and get the pivot index
+      const pivotIndex = partition(array, lowIndex, highIndex);
+
+      // Recursively sort elements before and after partition
+      quickSort(array, lowIndex, pivotIndex - 1);
+      quickSort(array, pivotIndex + 1, highIndex);
+  }
+  return array; // Return the sorted array
+}
 
 
+/**
+* Partitions the array segment and returns the index of the pivot.
+* 
+* @param {Array} array - The array to be partitioned.
+* @param {number} lowIndex - The starting index of the array segment.
+* @param {number} highIndex - The ending index of the array segment.
+* @returns {number} The index of the pivot.
+*/
+function partition(array, lowIndex, highIndex) {
+  // Choose the pivot as the last element of the array segment
+  const pivot = array[highIndex];
+  let i = lowIndex - 1; // Index of smaller element
 
+  for (let j = lowIndex; j < highIndex; j++) {
+      // If the current element is smaller than or equal to the pivot
+      if (array[j] <= pivot) {
+          i++;
+          // Swap array[i] and array[j]
+          [array[i], array[j]] = [array[j], array[i]];
+      }
+  }
+  // Swap array[i + 1] and array[highIndex] (or pivot)
+  [array[i + 1], array[highIndex]] = [array[highIndex], array[i + 1]];
+  return i + 1;
+}
 
-
-
-
-
+// Call quickSort and store the sorted array in variable b
+let b = quickSort([20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 1, 2, 3, 4, 5, 6, 7]);
+console.log(b); // Output the sorted array
