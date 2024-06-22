@@ -1,16 +1,3 @@
-
-
-
-function generateLargeArrayOfNumbers() {
-  let resultsArray = []
-
-  for(let i = 0; i < 1000000; i++){
-    resultsArray.push(parseInt(Math.random() * 10000000))
-  }
-  return resultsArray;
-}
-
-
 function selectionSort(arr){
   for(let i = 0; i < arr.length - 1; i++){
     let min_index = i; // index of the smallest element
@@ -138,3 +125,11 @@ function partition(array, lowIndex, highIndex) {
 }
 
 
+module.exports = {
+  selectionSort,
+  insertionSort,
+  mergeSort,
+  quickSort,
+  merge,
+  partition,
+};
