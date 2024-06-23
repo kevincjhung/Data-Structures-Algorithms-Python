@@ -1,5 +1,3 @@
-testArray = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 1, 2, 3, 4, 5, 6, 7]
-
 def recursives_selection_sort(A, i=None):
     # If 'i' is not provided, set it to the last index of the array A
     if i is None:
@@ -41,6 +39,8 @@ def selection_sort(A):
         
         if min_index != i:
             A[i], A[min_index] = A[min_index], A[i] 
+
+    return A
 
 """
     Sorts a list in ascending order using the insertion sort algorithm.
