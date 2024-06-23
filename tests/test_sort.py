@@ -62,7 +62,7 @@ def test_insertion_sort_basic():
     assert result == [1, 2, 3]
     assert_sorted(result)
 
-# Additional tests for insertion_sort can be added similarly
+
 
 ### Tests for merge_sort ###
 
@@ -73,7 +73,7 @@ def test_merge_sort_basic():
     assert result == [1, 2, 3]
     assert_sorted(result)
 
-# Additional tests for merge_sort can be added similarly
+
 
 ### Tests for quick_sort ###
 
@@ -84,5 +84,5 @@ def test_quick_sort_basic():
     assert result == [1, 2, 3]
     assert_sorted(result)
 
-# Additional tests for quick_sort can be added similarly
+
 
