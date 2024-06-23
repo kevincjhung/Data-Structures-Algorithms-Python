@@ -40,6 +40,8 @@ def selection_sort(A):
         if min_index != i:
             A[i], A[min_index] = A[min_index], A[i] 
 
+    return A
+
 """
     Sorts a list in ascending order using the insertion sort algorithm.
 
