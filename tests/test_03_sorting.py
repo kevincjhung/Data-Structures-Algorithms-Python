@@ -2,7 +2,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from sorting_03.sort import (
+from _03_sorting.sort import (
     selection_sort,
     insertion_sort,
     merge_sort,
