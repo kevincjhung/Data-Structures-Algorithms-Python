@@ -9,6 +9,7 @@ from _03_sorting.sort import (
     quick_sort
 )
 
+
 ### Helper Function for Tests ###
 
 def assert_sorted(arr):

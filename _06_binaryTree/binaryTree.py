@@ -90,6 +90,92 @@ class BinaryTree:
             else:
                 self._insert_recursive(node.right, value)
 
+    # ! TODO: evaluate and test
+    def search(self, value):
+        """
+        Searches for a value in the binary search tree.
+
+        Args:
+            value (any): The value to search for.
+
+        Returns:
+            Node: The node containing the value, or None if not found.
+        """
+        return self._search_recursive(self.root, value)
+    
+
+    # ! TODO: evaluate and test
+    def _search_recursive(self, node, value):
+        """
+        Helper function for recursive search of a value in the binary tree.
+
+        Args:
+            node (Node): The current node.
+            value (any): The value to search for.
+
+        Returns:
+            Node: The node containing the value, or None if not found.
+        """
+        if node is None or node.content == value:
+            return node
+        if value < node.content:
+            return self._search_recursive(node.left, value)
+        else:
+            return self._search_recursive(node.right, value)
+
+    # ! TODO: evaluate and test
+    def delete(self, value):
+        """
+        Deletes a value from the binary search tree.
+
+        Args:
+            value (any): The value to delete.
+        """
+        node_to_delete = self.search(value)
+        if node_to_delete:
+            self._delete_node(node_to_delete)
+    
+    # ! TODO: evaluate and test
+    def _delete_node(self, node):
+        """
+        Helper function to delete a node from the binary tree.
+
+        Args:
+            node (Node): The node to delete.
+        """
+        # Node has no children
+        if not node.left and not node.right:
+            if node == self.root:
+                self.root = None
+            elif node == node.parent.left:
+                node.parent.left = None
+            else:
+                node.parent.right = None
+
+        # Node has one child
+        elif not node.left:
+            if node == self.root:
+                self.root = node.right
+            elif node == node.parent.left:
+                node.parent.left = node.right
+            else:
+                node.parent.right = node.right
+            node.right.parent = node.parent
+        elif not node.right:
+            if node == self.root:
+                self.root = node.left
+            elif node == node.parent.left:
+                node.parent.left = node.left
+            else:
+                node.parent.right = node.left
+            node.left.parent = node.parent
+
+        # Node has two children
+        else:
+            successor = self._find_min(node.right)
+            node.content = successor.content
+            self._delete_node(successor)
+
     def in_order_traversal(self):
         """
         Performs an in-order traversal of the binary tree.
@@ -114,12 +200,3 @@ class BinaryTree:
             yield node.content
             yield from self._in_order_recursive(node.right)
 
-
-# Example usage
-if __name__ == "__main__":
-    tree = BinaryTree()
-    tree.insert(5)
-    tree.insert(3)
-    tree.insert(7)
-
-    print("In-order Traversal: ", list(tree.in_order_traversal()))  # Output: [3, 5, 7]
