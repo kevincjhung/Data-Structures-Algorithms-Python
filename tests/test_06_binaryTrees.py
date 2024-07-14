@@ -40,7 +40,21 @@ class TestNode(unittest.TestCase):
         self.assertIsNone(node.right)
 
 
-# TODO: insertion tests
+class TestBinaryTree(unittest.TestCase):
+    def setUp(self):
+        self.tree = BinaryTree()
+
+    def tearDown(self):
+        self.tree = None
+
+    def test_insert_single_value(self):
+        self.tree.insert(10)
+        self.assertIsNotNone(self.tree.root)
+        self.assertEqual(self.tree.root.content, 10)
+        self.assertIsNone(self.tree.root.left)
+        self.assertIsNone(self.tree.root.right)
+        
+        
   # insert a single value into the tree
 
   # insert multiple values and make sure the BST property is maintained
