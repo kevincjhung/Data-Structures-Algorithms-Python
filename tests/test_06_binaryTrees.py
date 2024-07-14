@@ -1,5 +1,6 @@
 import os
 import sys
+import unittest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from _06_binaryTree.binaryTree import (
@@ -10,8 +11,34 @@ from _06_binaryTree.binaryTree import (
 
 # TODO: initialization tests
   # create a node with children
+  
+class TestNode(unittest.TestCase):
+    def setUp(self):
+        self.parent = Node(10)
+        self.left_child = Node(5)
+        self.right_child = Node(15)
+        self.parent.set_left(self.left_child)
+        self.parent.set_right(self.right_child)
+    
+    def tearDown(self):
+        self.parent = None
+        self.left_child = None
+        self.right_child = None
 
-  # create a node without children
+    def test_node_initialization_with_children(self):
+        self.assertEqual(self.parent.content, 10)
+        self.assertEqual(self.parent.left.content, 5)
+        self.assertEqual(self.parent.right.content, 15)
+        self.assertEqual(self.left_child.parent, self.parent)
+        self.assertEqual(self.right_child.parent, self.parent)
+    
+    def test_node_initialization_without_children(self):
+        node = Node(10)
+        self.assertEqual(node.content, 10)
+        self.assertIsNone(node.parent)
+        self.assertIsNone(node.left)
+        self.assertIsNone(node.right)
+
 
 # TODO: insertion tests
   # insert a single value into the tree
@@ -47,3 +74,8 @@ from _06_binaryTree.binaryTree import (
   # Test operations on an initially empty tree.
 
   # Test deleting from an empty tree.
+
+
+
+if __name__ == '__main__':
+    unittest.main()
