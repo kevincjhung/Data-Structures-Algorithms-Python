@@ -90,7 +90,20 @@ class BinaryTree:
             else:
                 self._insert_recursive(node.right, value)
 
-    # ! TODO: evaluate and test
+    def _find_min(self, node: Node) -> Node:
+        """
+        Finds the node with the minimum value in a subtree.
+        Args:
+            node (Node): The root of the subtree.
+        Returns:
+            Node: The node with the minimum value.
+        """
+
+        while node.left:
+            node = node.left
+        return node
+    
+
     def search(self, value):
         """
         Searches for a value in the binary search tree.
@@ -102,9 +115,7 @@ class BinaryTree:
             Node: The node containing the value, or None if not found.
         """
         return self._search_recursive(self.root, value)
-    
 
-    # ! TODO: evaluate and test
     def _search_recursive(self, node, value):
         """
         Helper function for recursive search of a value in the binary tree.
@@ -123,7 +134,6 @@ class BinaryTree:
         else:
             return self._search_recursive(node.right, value)
 
-    # ! TODO: evaluate and test
     def delete(self, value):
         """
         Deletes a value from the binary search tree.
@@ -134,8 +144,7 @@ class BinaryTree:
         node_to_delete = self.search(value)
         if node_to_delete:
             self._delete_node(node_to_delete)
-    
-    # ! TODO: evaluate and test
+
     def _delete_node(self, node):
         """
         Helper function to delete a node from the binary tree.
@@ -199,4 +208,3 @@ class BinaryTree:
             yield from self._in_order_recursive(node.left)
             yield node.content
             yield from self._in_order_recursive(node.right)
-
