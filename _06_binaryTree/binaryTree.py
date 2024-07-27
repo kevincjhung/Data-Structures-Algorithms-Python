@@ -66,6 +66,8 @@ class BinaryTree:
         Args:
             value (any): The value to insert.
         """
+        if value is None:
+            raise TypeError("Cannot insert None into the binary tree.")
         if not self.root:
             self.root = Node(value)
         else:
