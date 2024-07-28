@@ -1,47 +1,48 @@
 class Node:
-    """
-    Represents a node in the binary tree.
-
-    Attributes:
-        content (any): The content stored in the node.
-        parent (Node, optional): The parent node.
-        left (Node, optional): The left child node.
-        right (Node, optional): The right child node.
-    """
-
-    def __init__(self, content, parent=None, left=None, right=None):
+    def __init__(self, key: int):
         """
-        Initializes a Node instance.
+        Initialize a node with a given key.
 
         Args:
-            content (any): The content to be stored in the node.
-            parent (Node, optional): The parent node.
-            left (Node, optional): The left child node.
-            right (Node, optional): The right child node.
+            key (int): The key for the node.
         """
-        self.content = content
-        self.parent = parent
-        self.left = left
-        self.right = right
+        self.content = key
+        self.left = None
+        self.right = None
+        self.height = 1
 
-    def set_left(self, node):
+    def set_left(self, left_node: 'Node') -> None:
         """
-        Sets the left child of the node.
+        Set the left child of the node.
 
         Args:
-            node (Node): The node to be set as the left child.
+            left_node (Node): The left child node.
         """
-        self.left = node
-        if node:
-            node.parent = self
+        self.left = left_node
 
-    def set_right(self, node):
+    def set_right(self, right_node: 'Node') -> None:
         """
-        Sets the right child of the node.
+        Set the right child of the node.
 
         Args:
-            node (Node): The node to be set as the right child.
+            right_node (Node): The right child node.
         """
-        self.right = node
-        if node:
-            node.parent = self
+        self.right = right_node
+
+    def __str__(self) -> str:
+        """
+        Return a string representation of the node.
+
+        Returns:
+            str: String representation of the node.
+        """
+        return f'Node({self.content})'
+
+    def __repr__(self) -> str:
+        """
+        Return a detailed string representation of the node.
+
+        Returns:
+            str: Detailed string representation of the node.
+        """
+        return f'Node(content={self.content}, left={self.left}, right={self.right}, height={self.height})'
