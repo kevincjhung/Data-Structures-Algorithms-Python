@@ -27,8 +27,8 @@ class TestHeapInitialization:
 class TestHeapInsertion:
     def test_single_insertion(self):
         heap = BinaryHeap('min')
-        heap.insert(10)
-        assert heap.peek() == 10
+        heap.insert(3)
+        assert heap.peek() == 3
         assert len(heap) == 1
 
     def test_multiple_insertion(self):
@@ -36,8 +36,13 @@ class TestHeapInsertion:
         heap.insert(10)
         heap.insert(5)
         heap.insert(20)
+        heap.insert(40)
+        heap.insert(60)
+        heap.insert(80)
+        heap.insert(90)
+        
         assert heap.peek() == 5
-        assert len(heap) == 3
+        assert len(heap) == 7
 
     def test_heap_property(self):
         min_heap = BinaryHeap('min')
@@ -45,6 +50,7 @@ class TestHeapInsertion:
         min_heap.insert(5)
         min_heap.insert(20)
         assert min_heap.peek() == 5
+        
         max_heap = BinaryHeap('max')
         max_heap.insert(10)
         max_heap.insert(5)
