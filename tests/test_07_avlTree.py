@@ -140,7 +140,7 @@ class TestAVLTreeDeletion:
         # Delete node with two children
         self.tree.delete(5)
         
-        # Check the in-order traversal after deletion
+        
 class TestAVLTreeSearch:
     def setup_tree(self):
         self.tree = AVLTree()
